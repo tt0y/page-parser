@@ -2,21 +2,23 @@
 require_once (ROOT.'/views/menu.php');
 // Отобразим результаты поиска
 
-if ($resultList): ?>
+if ($resultList): 
+    
+?>
 <h3>All Results</h3>
     <ul>
-        <? foreach ($resultList as $item) :?>
+        <?php foreach ($resultList as $item) :?>
             <li>
-                <a href="<?= WWW ?>results/item/<?= $item['id']?>">
-                    Url: <?= $item['url']?><br>
-                    Type: <?= $item['search_types']?><br>
-                    Results count: <?= $item['count']?>
+                <a href="<?php echo WWW; ?>results/item/<?php echo $item['id']?>">
+                    Url: <?php echo $item['url'];?><br>
+                    Type: <?php echo $item['search_types'];?><br>
+                    Results count: <?php echo $item['count'];?>
                 </a>
             </li>
-        <? endforeach; ?>
+        <?php endforeach; ?>
     </ul>
-<? else: ?>
+<?php else: ?>
     <span class="label label-warning">No results!</span>
-<? endif; ?>
+<?php endif; 
 
-<?php require_once (ROOT.'/views/footer.php');?>
+require_once (ROOT.'/views/footer.php');
